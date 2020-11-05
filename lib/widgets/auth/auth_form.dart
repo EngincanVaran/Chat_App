@@ -83,6 +83,9 @@ class _AuthFormState extends State<AuthForm> {
                       return null;
                     },
                     keyboardType: TextInputType.emailAddress,
+                    autocorrect: false,
+                    textCapitalization: TextCapitalization.none,
+                    enableSuggestions: false,
                     decoration: InputDecoration(
                       labelText: "Email Adress",
                     ),
@@ -92,6 +95,9 @@ class _AuthFormState extends State<AuthForm> {
                   ),
                   if (!_isLogin)
                     TextFormField(
+                      autocorrect: true,
+                      textCapitalization: TextCapitalization.words,
+                      enableSuggestions: false,
                       key: ValueKey('userName'),
                       validator: (value) {
                         if (value.isEmpty || value.length < 4) {
